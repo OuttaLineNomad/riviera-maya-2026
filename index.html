@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riviera Maya Family Getaway 2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink:   { DEFAULT: '#0d1b2a', mid: '#122233', light: '#1a2f45' },
+            sea:   { DEFAULT: '#1b4f72', light: '#2e86ab' },
+            sand:  { DEFAULT: '#f5ead8', dark: '#e8d5b7' },
+            coral: { DEFAULT: '#c97b4b', light: '#e09570' },
+            gold:  { DEFAULT: '#c9984a', light: '#e8b96a' },
+            foam:  '#f0f7f4',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            body:    ['Jost', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', system-ui, sans-serif; background: #f5ead8; color: #2c1810; overflow-x: hidden; }
+
+    /* ── Hero ─────────────────────────────── */
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://www.mayapalaceresort.com/images/slides/slide-1.jpg') center/cover no-repeat;
+      animation: kenBurns 24s ease-in-out infinite alternate;
+    }
+    @keyframes kenBurns { from { transform:scale(1); } to { transform:scale(1.08); } }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(6,14,24,.88) 0%,
+        rgba(13,27,42,.60) 30%,
+        rgba(13,27,42,.60) 70%,
+        rgba(6,14,24,.92) 100%
+      );
+    }
+    /* Radial vignette — darkens edges, keeps slight depth in center */
+    .hero-vignette {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 90% 80% at 50% 50%, transparent 20%, rgba(4,10,20,.65) 100%);
+    }
+    .hero-dots {
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 30px 30px;
+      mix-blend-mode: overlay;
+    }
+
+    /* ── Hero animations ──────────────────── */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(36px); } to { opacity:1; transform:none; } }
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    .h-fi1 { opacity:0; animation: fadeIn  1s   ease .15s  forwards; }
+    .h-fu1 { opacity:0; animation: fadeUp  .9s  ease .4s   forwards; }
+    .h-fu2 { opacity:0; animation: fadeUp  .9s  ease .7s   forwards; }
+    .h-fu3 { opacity:0; animation: fadeUp  .9s  ease 1.0s  forwards; }
+    .h-fu4 { opacity:0; animation: fadeUp  .9s  ease 1.25s forwards; }
+
+    /* ── Scroll reveal ────────────────────── */
+    .reveal { opacity:0; transform:translateY(22px); transition: opacity .72s ease, transform .72s ease; }
+    .reveal.in { opacity:1; transform:none; }
+    .d1 { transition-delay:.08s; } .d2 { transition-delay:.2s; }
+    .d3 { transition-delay:.32s; } .d4 { transition-delay:.44s; }
+
+    /* ── Chrome ───────────────────────────── */
+    .eyebrow { display:block; font-family:'Jost',sans-serif; font-size:.67rem; font-weight:600; letter-spacing:.24em; text-transform:uppercase; color:#c9984a; }
+    .rule { display:block; width:42px; height:2px; background:#c9984a; margin:.7rem auto 0; }
+
+    /* ── Overview cards ───────────────────── */
+    .ov-card { background:#fff; border-left:4px solid #c9984a; border-radius:2px; box-shadow:0 4px 24px rgba(13,27,42,.08); transition: transform .3s ease, box-shadow .3s ease; }
+    .ov-card:hover { transform:translateY(-4px); box-shadow:0 12px 36px rgba(13,27,42,.14); }
+
+    /* ── Suite frame ──────────────────────── */
+    .suite-frame { position:relative; }
+    .suite-frame img { display:block; width:100%; border:2px solid rgba(201,152,74,.22); }
+    .suite-frame::after { content:''; position:absolute; inset:0; box-shadow:10px 10px 0 rgba(201,152,74,.16); pointer-events:none; }
+
+    /* ── VIP list ─────────────────────────── */
+    .vip-li { display:flex; align-items:flex-start; gap:.55rem; padding:.55rem 0; border-bottom:1px solid rgba(255,255,255,.1); }
+    .vip-li:last-child { border-bottom:none; }
+
+    /* ── Compound banner ──────────────────── */
+    .cpd-banner { position:relative; overflow:hidden; }
+    .cpd-banner::before { content:''; position:absolute; inset:0; background:rgba(13,27,42,.68); z-index:1; }
+    .cpd-banner-img { position:absolute; inset:0; background:url('https://www.mayapalaceresort.com/images/gallery/gallery-3.jpg') center/cover no-repeat; }
+    .cpd-content { position:relative; z-index:2; }
+
+    /* ── Amenity cards ────────────────────── */
+    .am-card { background:#fff; border-radius:2px; overflow:hidden; box-shadow:0 2px 16px rgba(13,27,42,.07); transition: transform .3s ease, box-shadow .3s ease; }
+    .am-card:hover { transform:translateY(-4px); box-shadow:0 10px 32px rgba(13,27,42,.13); }
+
+    /* ── Photo cards (dining etc) ─────────── */
+    .photo-card { border-radius:2px; overflow:hidden; position:relative; }
+    .photo-card-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(13,27,42,.85) 0%, rgba(13,27,42,.2) 60%, transparent 100%); }
+
+    /* ── Entertainment cards ──────────────── */
+    .ent-card { border-radius:2px; transition: transform .25s ease; }
+    .ent-card:hover { transform:translateY(-3px); }
+
+    /* ── Review cards ─────────────────────── */
+    .review-card { background:#fff; border-radius:2px; border-top:3px solid #c9984a; box-shadow:0 4px 20px rgba(13,27,42,.07); }
+
+    /* ── Bowling disclaimer ───────────────── */
+    .bowling-note { background:#fff8ed; border:1px solid #f0c070; border-left:4px solid #c9984a; border-radius:2px; }
+
+    /* ── Tooltip ──────────────────────────── */
+    .tip-wrap { position:relative; display:inline-flex; align-items:center; }
+    .tip-box { visibility:hidden; opacity:0; pointer-events:none; position:absolute; bottom:calc(100% + 8px); left:50%; transform:translateX(-50%); width:210px; background:#0d1b2a; color:#f5ead8; font-size:.72rem; line-height:1.55; padding:.6rem .75rem; border-radius:2px; transition:opacity .2s ease; z-index:20; font-family:'Jost',sans-serif; }
+    .tip-box::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:5px solid transparent; border-top-color:#0d1b2a; }
+    .tip-wrap:hover .tip-box, .tip-wrap:focus-within .tip-box { visibility:visible; opacity:1; }
+
+    /* ── CTA ──────────────────────────────── */
+    .btn-cta { display:inline-block; border:2px solid #f5ead8; color:#f5ead8; font-family:'Jost',sans-serif; font-size:.76rem; font-weight:500; letter-spacing:.16em; text-transform:uppercase; padding:.85rem 2.6rem; transition: background .25s ease, color .25s ease; text-decoration:none; }
+    .btn-cta:hover, .btn-cta:focus-visible { background:#f5ead8; color:#0d1b2a; outline:none; }
+    .btn-cta:focus-visible { outline:2px solid #c9984a; outline-offset:3px; }
+
+    /* ── Star rating ──────────────────────── */
+    .stars { color:#c9984a; letter-spacing:.05em; font-size:.85rem; }
+
+    /* ── Icon circles ─────────────────────── */
+    .ic-sand { background:#f5ead8; width:40px; height:40px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+    .ic-sea  { background:rgba(46,134,171,.15); border:1px solid rgba(46,134,171,.4); width:44px; height:44px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+    .ic-gold { background:rgba(201,152,74,.15); border:1px solid rgba(201,152,74,.4); width:44px; height:44px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+    .ic-lg { width:56px; height:56px; }
+
+    /* ── Weather callout ──────────────────── */
+    .weather-card { background:#fff; border-radius:2px; text-align:center; box-shadow:0 2px 16px rgba(13,27,42,.07); padding:1.75rem 1.25rem; }
+    .weather-num { font-family:'Cormorant Garamond',serif; font-size:2.4rem; font-weight:400; color:#0d1b2a; line-height:1; }
+
+    :focus-visible { outline:2px solid #c9984a; outline-offset:3px; }
+  </style>
+</head>
+
+<body>
+
+<!-- ════════════════════════════════════════════════ HERO -->
+<header id="top" class="relative flex flex-col items-center justify-center overflow-hidden text-center px-6" style="min-height:100svh;" role="banner">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+  <div class="hero-dots" aria-hidden="true"></div>
+
+  <div class="relative z-10 max-w-3xl mx-auto">
+    <p id="hero-eyebrow" class="h-fi1 eyebrow mb-6" style="color:rgba(245,234,216,.85);text-shadow:0 1px 10px rgba(0,0,0,.9);">October 10 – 17, 2026 &nbsp;·&nbsp; Barceló Maya Palace</p>
+
+    <h1 class="h-fu1 font-display text-sand leading-none mb-4"
+        style="font-size:clamp(2.8rem,8.5vw,5.5rem);font-weight:400;font-style:italic;letter-spacing:-.01em;
+               text-shadow:0 2px 24px rgba(0,0,0,.9), 0 0 80px rgba(0,0,0,.6);">
+      Riviera Maya<br>Family Getaway
+    </h1>
+    <p class="h-fu2 font-display"
+       style="font-size:clamp(1.5rem,4vw,2.5rem);font-weight:600;letter-spacing:.06em;color:#e8b96a;margin-bottom:1.5rem;
+              text-shadow:0 2px 20px rgba(0,0,0,.8);">2026</p>
+
+    <p class="h-fu3 font-body max-w-md mx-auto mb-10"
+       style="font-size:1rem;font-weight:300;letter-spacing:.04em;line-height:1.8;color:rgba(245,234,216,.88);
+              text-shadow:0 1px 12px rgba(0,0,0,.8);">
+      An All-Inclusive Luxury Experience<br><span style="color:#f5ead8;font-weight:500;">at Barceló Maya Palace</span>
+    </p>
+
+    <a href="#itinerary" class="h-fu4 btn-cta" aria-label="Scroll to trip itinerary">View Itinerary</a>
+
+    <p class="h-fu4 font-body mt-8" style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,234,216,.38);">
+      Xpu Há · Riviera Maya · Mexico
+    </p>
+  </div>
+
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 h-fu4" aria-hidden="true">
+    <div style="width:1px;height:52px;background:linear-gradient(to bottom,rgba(245,234,216,.4),transparent);margin:0 auto;"></div>
+  </div>
+</header>
+
+
+<!-- ════════════════════════════════════════════════ TRIP OVERVIEW -->
+<main>
+<section id="itinerary" class="py-24 px-6" style="background:#f5ead8;">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-14 reveal">
+      <span class="eyebrow">The Plan</span>
+      <span class="rule"></span>
+      <h2 class="font-display text-ink mt-3" style="font-size:clamp(2rem,5vw,3rem);font-weight:400;font-style:italic;">Trip Overview &amp; Logistics</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+      <div class="ov-card p-7 reveal d1">
+        <div class="flex items-start gap-4">
+          <div class="ic-sand">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#c9984a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <span class="eyebrow mb-1" style="color:#1b4f72;">Destination</span>
+            <h3 class="font-display text-ink" style="font-size:1.4rem;font-weight:500;line-height:1.2;">Barceló Maya Palace</h3>
+            <p class="font-body text-sm mt-1" style="color:#6b4f3a;">Xpu Há, Riviera Maya, Mexico</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ov-card p-7 reveal d2">
+        <div class="flex items-start gap-4">
+          <div class="ic-sand">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#c9984a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div>
+            <span class="eyebrow mb-1" style="color:#1b4f72;">Dates</span>
+            <h3 class="font-display text-ink" style="font-size:1.4rem;font-weight:500;">Oct 10 – Oct 17, 2026</h3>
+            <p class="font-body text-sm mt-1" style="color:#6b4f3a;">7 nights · All-inclusive</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ov-card p-7 reveal d3">
+        <div class="flex items-start gap-4">
+          <div class="ic-sand">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#c9984a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <span class="eyebrow mb-1" style="color:#1b4f72;">Travel Party</span>
+            <h3 class="font-display text-ink mb-2" style="font-size:1.4rem;font-weight:500;">4 Travelers · 3 Seats</h3>
+            <ul class="font-body text-sm space-y-1" style="color:#6b4f3a;">
+              <li>2 Adults</li>
+              <li>1 Child — Age 5 &nbsp;<em style="color:#c9984a;font-size:.8em;">Barcy Club eligible (min. age 4)</em></li>
+              <li>1 Kid — Age 1 &nbsp;<em style="color:#c9984a;font-size:.8em;">In-room crib required</em></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="ov-card p-7 reveal d4">
+        <div class="flex items-start gap-4">
+          <div class="ic-sand">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#c9984a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21 4 19.5 2.5c-1.5-1.5-3.5-1.5-5 0L11 6 3.2 4.2a.9.9 0 0 0-.9.25L1.05 5.7a1 1 0 0 0 .16 1.52l4.39 3L5 12.5 3 14l1 2 2-1 .5 2 2-1-1.2-4.5 3 4.39a1 1 0 0 0 1.52.16l1.25-1.25a.9.9 0 0 0 .25-.9z"/></svg>
+          </div>
+          <div>
+            <span class="eyebrow mb-1" style="color:#1b4f72;">Getting There</span>
+            <h3 class="font-display text-ink" style="font-size:1.4rem;font-weight:500;">~75 Min from CUN</h3>
+            <p class="font-body text-sm mt-1 leading-relaxed" style="color:#6b4f3a;">Approx. 1 hr 15 min south of Cancún International Airport by private ground transfer.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Cost estimate banner — full width, shown only when ?name= param present -->
+    <div id="cost-card" class="reveal mt-8" style="display:none;">
+      <div style="position:relative;overflow:hidden;border-radius:2px;background:linear-gradient(135deg,#0d1b2a 0%,#1b4f72 100%);padding:clamp(2.5rem,6vw,4.5rem) clamp(1.5rem,5vw,4rem);text-align:center;">
+        <!-- dot texture -->
+        <div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.055) 1px,transparent 1px);background-size:28px 28px;" aria-hidden="true"></div>
+        <!-- gold accent line top -->
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#c9984a,transparent);" aria-hidden="true"></div>
+
+        <div style="position:relative;z-index:1;">
+          <span class="eyebrow" style="color:#c9984a;margin-bottom:1rem;display:block;letter-spacing:.28em;">Trip Cost Estimate</span>
+
+          <h3 class="font-display" style="font-size:clamp(1.1rem,2.5vw,1.6rem);font-weight:300;font-style:italic;color:rgba(245,234,216,.6);margin-bottom:.75rem;letter-spacing:.02em;">
+            Cost Estimate for the
+          </h3>
+          <p class="font-display" style="font-size:clamp(2rem,6vw,3.5rem);font-weight:600;color:#f5ead8;margin-bottom:2rem;letter-spacing:.01em;">
+            <span class="family-name-tag"></span>
+          </p>
+
+          <!-- Line items -->
+          <div style="max-width:420px;margin:0 auto 2rem;text-align:left;">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.1);">
+              <div>
+                <p class="font-body" style="font-size:.9rem;color:rgba(245,234,216,.85);">All-Inclusive Stay</p>
+                <p class="font-body" style="font-size:.72rem;color:rgba(245,234,216,.38);">7 nights · Barceló Maya Palace · Premium Level</p>
+              </div>
+              <p class="font-display" style="font-size:1.5rem;font-weight:500;color:#f5ead8;white-space:nowrap;margin-left:1.5rem;">~$3,300</p>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.1);">
+              <div>
+                <p class="font-body" style="font-size:.9rem;color:rgba(245,234,216,.85);">Flights</p>
+                <p class="font-body" style="font-size:.72rem;color:rgba(245,234,216,.38);">TIJ → CUN · Roundtrip via CBX · Nonstop</p>
+              </div>
+              <p class="font-display" style="font-size:1.5rem;font-weight:500;color:#f5ead8;white-space:nowrap;margin-left:1.5rem;">~$1,500</p>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;padding:1rem 0;">
+              <p class="font-body" style="font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,234,216,.5);">Estimated Total</p>
+              <p class="font-display" style="font-size:clamp(2.2rem,7vw,3.5rem);font-weight:400;line-height:1;color:#e8b96a;letter-spacing:-.02em;white-space:nowrap;margin-left:1.5rem;">~$4,800</p>
+            </div>
+          </div>
+
+          <p class="font-body" style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,234,216,.25);">
+            USD &nbsp;·&nbsp; October 10 – 17, 2026
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════ FLIGHTS -->
+<section id="flights" class="py-24 px-6" style="background:#0d1b2a;">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-14 reveal">
+      <span class="eyebrow">Getting There</span>
+      <span class="rule"></span>
+      <h2 class="font-display mt-3" style="font-size:clamp(2rem,5vw,3rem);font-weight:400;font-style:italic;color:#f5ead8;">Flights</h2>
+    </div>
+
+    <!-- Route banner -->
+    <div class="reveal mb-8" style="background:#122233;border-radius:2px;padding:2.5rem 2rem;">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-center mb-8">
+
+        <!-- Origin -->
+        <div>
+          <p class="eyebrow mb-1" style="color:#2e86ab;">Departure</p>
+          <p class="font-display" style="font-size:clamp(3rem,10vw,5.5rem);font-weight:400;line-height:1;color:#f5ead8;letter-spacing:-.02em;">TIJ</p>
+          <p class="font-body text-sm mt-1" style="color:rgba(245,234,216,.55);">General Abelardo L. Rodríguez<br>International Airport</p>
+          <p class="font-body text-xs mt-1" style="color:rgba(245,234,216,.3);">Tijuana, Baja California, Mexico</p>
+        </div>
+
+        <!-- Arrow -->
+        <div style="flex-shrink:0;">
+          <svg width="48" height="24" viewBox="0 0 48 24" fill="none" aria-hidden="true">
+            <line x1="0" y1="12" x2="40" y2="12" stroke="rgba(201,152,74,.5)" stroke-width="1.5"/>
+            <polyline points="32,4 44,12 32,20" fill="none" stroke="#c9984a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- small plane icon -->
+            <path d="M18 9l-3 3 3 3M15 12h8" stroke="rgba(201,152,74,.4)" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+          <p class="font-body text-xs mt-1 text-center" style="color:rgba(201,152,74,.6);letter-spacing:.1em;text-transform:uppercase;">Nonstop</p>
+        </div>
+
+        <!-- Destination -->
+        <div>
+          <p class="eyebrow mb-1" style="color:#2e86ab;">Arrival</p>
+          <p class="font-display" style="font-size:clamp(3rem,10vw,5.5rem);font-weight:400;line-height:1;color:#f5ead8;letter-spacing:-.02em;">CUN</p>
+          <p class="font-body text-sm mt-1" style="color:rgba(245,234,216,.55);">Cancún International Airport</p>
+          <p class="font-body text-xs mt-1" style="color:rgba(245,234,216,.3);">Cancún, Quintana Roo, Mexico</p>
+        </div>
+
+      </div>
+
+      <!-- Flight detail strip -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-px" style="background:rgba(255,255,255,.07);border-radius:1px;overflow:hidden;">
+        <div class="text-center py-4 px-3" style="background:#122233;">
+          <p class="eyebrow mb-1" style="color:#2e86ab;font-size:.6rem;">Depart</p>
+          <p class="font-display" style="font-size:1.2rem;font-weight:500;color:#f5ead8;">Oct 10</p>
+          <p class="font-body text-xs" style="color:rgba(245,234,216,.4);">2026</p>
+        </div>
+        <div class="text-center py-4 px-3" style="background:#122233;">
+          <p class="eyebrow mb-1" style="color:#2e86ab;font-size:.6rem;">Return</p>
+          <p class="font-display" style="font-size:1.2rem;font-weight:500;color:#f5ead8;">Oct 17</p>
+          <p class="font-body text-xs" style="color:rgba(245,234,216,.4);">2026</p>
+        </div>
+        <div class="text-center py-4 px-3" style="background:#122233;">
+          <p class="eyebrow mb-1" style="color:#2e86ab;font-size:.6rem;">Routing</p>
+          <p class="font-display" style="font-size:1.2rem;font-weight:500;color:#f5ead8;">Nonstop</p>
+          <p class="font-body text-xs" style="color:rgba(245,234,216,.4);">each way</p>
+        </div>
+        <div class="text-center py-4 px-3" style="background:#122233;">
+          <p class="eyebrow mb-1" style="color:#2e86ab;font-size:.6rem;">Transfer</p>
+          <p class="font-display" style="font-size:1.2rem;font-weight:500;color:#f5ead8;">~75 min</p>
+          <p class="font-body text-xs" style="color:rgba(245,234,216,.4);">CUN → resort</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CBX callout — the star of this section -->
+    <div class="reveal" style="border-radius:2px;overflow:hidden;">
+      <div style="background:linear-gradient(135deg,#1b4f72 0%,#2e86ab 100%);padding:2.5rem 2rem;position:relative;overflow:hidden;">
+        <!-- subtle diagonal lines -->
+        <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(255,255,255,.04) 20px,rgba(255,255,255,.04) 21px);" aria-hidden="true"></div>
+        <div style="position:relative;z-index:1;">
+          <div class="flex flex-col sm:flex-row items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="ic-gold ic-lg">
+                <!-- bridge/crossing icon -->
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9984a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M2 20h20"/><path d="M6 20V10"/><path d="M18 20V10"/>
+                  <path d="M2 10c2-4 4-6 10-6s8 2 10 6"/><line x1="6" y1="14" x2="18" y2="14"/>
+                </svg>
+              </div>
+            </div>
+            <div class="flex-1">
+              <span class="eyebrow mb-1" style="color:#e8b96a;">The Smart Move</span>
+              <h3 class="font-display mb-2" style="font-size:clamp(1.4rem,3vw,2rem);font-weight:500;color:#f5ead8;">Fly via CBX — Cross Border Xpress</h3>
+              <p class="font-body text-sm leading-relaxed mb-4" style="color:rgba(245,234,216,.78);">
+                Instead of flying out of a US airport, you drive to the <strong style="color:#f5ead8;">Cross Border Xpress bridge</strong> in Otay Mesa — a dedicated pedestrian sky bridge that connects directly into the Tijuana airport terminal. Walk across, check in, fly. No US airport markups.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="p-4" style="background:rgba(255,255,255,.1);border-radius:2px;">
+                  <p class="eyebrow mb-1" style="color:#e8b96a;font-size:.6rem;">Airfare Savings</p>
+                  <p class="font-display" style="font-size:1.8rem;font-weight:500;color:#f5ead8;line-height:1;">$500–$1,000</p>
+                  <p class="font-body text-xs mt-1" style="color:rgba(245,234,216,.55);">vs. flying from a US airport</p>
+                </div>
+                <div class="p-4" style="background:rgba(255,255,255,.1);border-radius:2px;">
+                  <p class="eyebrow mb-1" style="color:#e8b96a;font-size:.6rem;">CBX Bridge Fee</p>
+                  <p class="font-display" style="font-size:1.8rem;font-weight:500;color:#f5ead8;line-height:1;">~$16–18</p>
+                  <p class="font-body text-xs mt-1" style="color:rgba(245,234,216,.55);">per person each direction</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CBX how-it-works strip -->
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-px" style="background:rgba(13,27,42,.8);">
+        <div class="py-5 px-5" style="background:#0d1b2a;">
+          <p class="eyebrow mb-1" style="color:#c9984a;font-size:.6rem;">Step 1</p>
+          <p class="font-body text-sm font-semibold mb-1" style="color:rgba(245,234,216,.85);">Drive to Otay Mesa</p>
+          <p class="font-body text-xs" style="color:rgba(245,234,216,.4);">San Diego/Tijuana border. CBX is open 24/7 with paid parking on the US side.</p>
+        </div>
+        <div class="py-5 px-5" style="background:#0d1b2a;">
+          <p class="eyebrow mb-1" style="color:#c9984a;font-size:.6rem;">Step 2</p>
+          <p class="font-body text-sm font-semibold mb-1" style="color:rgba(245,234,216,.85);">Cross the Sky Bridge</p>
+          <p class="font-body text-xs" style="color:rgba(245,234,216,.4);">Covered pedestrian bridge drops you directly inside the TIJ terminal. Takes minutes.</p>
+        </div>
+        <div class="py-5 px-5" style="background:#0d1b2a;">
+          <p class="eyebrow mb-1" style="color:#c9984a;font-size:.6rem;">Step 3</p>
+          <p class="font-body text-sm font-semibold mb-1" style="color:rgba(245,234,216,.85);">Check In at TIJ</p>
+          <p class="font-body text-xs" style="color:rgba(245,234,216,.4);">General Abelardo L. Rodríguez Airport. Volaris and VivaAerobus both fly TIJ→CUN nonstop.</p>
+        </div>
+        <div class="py-5 px-5" style="background:#0d1b2a;">
+          <p class="eyebrow mb-1" style="color:#c9984a;font-size:.6rem;">Step 4</p>
+          <p class="font-body text-sm font-semibold mb-1" style="color:rgba(245,234,216,.85);">Land in Cancún</p>
+          <p class="font-body text-xs" style="color:rgba(245,234,216,.4);">Cancún Int'l Airport (CUN). Ground transfer is ~75 min south to Barceló Maya Palace.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════ ACCOMMODATIONS -->
+<section id="accommodations" class="py-24 px-6" style="background:#0d1b2a;">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-16 reveal">
+      <span class="eyebrow">Where We Stay</span>
+      <span class="rule"></span>
+      <h2 class="font-display mt-3" style="font-size:clamp(2rem,5vw,3rem);font-weight:400;font-style:italic;color:#f5ead8;">Accommodations</h2>
+    </div>
+
+    <!-- Two views of the same suite, shot from each end -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-4 reveal">
+      <div class="suite-frame" style="position:relative;">
+        <img src="https://www.mayapalaceresort.com/images/slides/slide-14.jpg"
+             alt="Barceló Maya Palace Junior Suite — bedroom end, king bed, garden terrace and hammock visible"
+             loading="lazy" />
+        <span class="font-body" style="position:absolute;bottom:10px;left:12px;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,234,216,.7);background:rgba(13,27,42,.5);padding:.25rem .55rem;border-radius:1px;">Bedroom end</span>
+      </div>
+      <div class="suite-frame" style="position:relative;">
+        <img src="https://www.mayapalaceresort.com/images/slides/slide-15.jpg"
+             alt="Barceló Maya Palace Junior Suite — sitting area end, sofa set, TV, second sliding door to terrace"
+             loading="lazy" />
+        <span class="font-body" style="position:absolute;bottom:10px;left:12px;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,234,216,.7);background:rgba(13,27,42,.5);padding:.25rem .55rem;border-radius:1px;">Sitting area end</span>
+      </div>
+    </div>
+    <p class="font-body text-xs mb-10 reveal" style="color:rgba(245,234,216,.35);font-style:italic;text-align:center;">Both photos show the same room — one elongated Junior Suite, shot from each end</p>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+      <div class="reveal d1">
+        <span class="eyebrow mb-2" style="color:#2e86ab;">Room Tier</span>
+        <h3 class="font-display mb-2" style="font-size:clamp(1.8rem,4vw,2.5rem);font-weight:400;font-style:italic;color:#f5ead8;line-height:1.15;">Premium Level<br>Junior Suite</h3>
+        <p class="font-body mb-4 leading-relaxed" style="color:rgba(245,234,216,.68);font-size:.95rem;">
+          One elongated suite — king bed at one end, full sofa sitting area at the other, all connected as a single open room. Warm amber walls, four-poster bed, ceiling fan, and sliding glass doors to a private terrace with a hammock. The suite's natural length means the sitting area at the far end is the obvious spot for a kid's crib — physically away from the sleeping bed but still in the same room.
+        </p>
+        <p class="font-body mb-8 leading-relaxed" style="color:rgba(245,234,216,.5);font-size:.88rem;font-style:italic;">
+          Premium Level rooms sit in a quieter section of the Palace complex — closer to the private lounge, further from the main pool bar noise.
+        </p>
+
+        <span class="eyebrow mb-4" style="color:#c9984a;">Premium Level VIP Inclusions</span>
+        <ul role="list" class="mt-4">
+          <li class="vip-li"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9984a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span class="font-body text-sm" style="color:rgba(245,234,216,.82);">24-hour complimentary room service</span></li>
+          <li class="vip-li"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9984a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span class="font-body text-sm" style="color:rgba(245,234,216,.82);">Priority à la carte restaurant reservations — book two at check-in (vs. one for standard)</span></li>
+          <li class="vip-li"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9984a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span class="font-body text-sm" style="color:rgba(245,234,216,.82);">VIP private lounge check-in — seated, drinks served, no general queue</span></li>
+          <li class="vip-li"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9984a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span class="font-body text-sm" style="color:rgba(245,234,216,.82);">Exclusive Premium Lounge: continental breakfast, canapés, international beverages, 7am–11pm</span></li>
+          <li class="vip-li"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9984a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span class="font-body text-sm" style="color:rgba(245,234,216,.82);">Daily hydro-spa access included</span></li>
+          <li class="vip-li"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9984a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span class="font-body text-sm" style="color:rgba(245,234,216,.82);">Upgraded top-shelf beverage package</span></li>
+        </ul>
+      </div>
+
+      <!-- Premium level honest take -->
+      <div class="reveal d2">
+        <div class="p-6 mb-5" style="background:#122233;border-left:4px solid #c9984a;border-radius:2px;">
+          <span class="eyebrow mb-2" style="color:#c9984a;">Honest Assessment</span>
+          <h4 class="font-display mb-3" style="font-size:1.2rem;font-weight:500;color:#f5ead8;">Is Premium Level Worth It?</h4>
+          <p class="font-body text-sm leading-relaxed mb-3" style="color:rgba(245,234,216,.72);">
+            Reviews are split. The biggest concrete benefits for a family with small kids:
+          </p>
+          <ul class="space-y-2 mb-4">
+            <li class="font-body text-sm" style="color:rgba(245,234,216,.78);"><span style="color:#c9984a;">✓</span> &nbsp;Restaurant priority matters — specialty à la carte books out fast in peak season. Getting two reservations at check-in vs. one is a real advantage.</li>
+            <li class="font-body text-sm" style="color:rgba(245,234,216,.78);"><span style="color:#c9984a;">✓</span> &nbsp;Seated check-in with drinks served is genuinely nice after a long travel day with two kids.</li>
+            <li class="font-body text-sm" style="color:rgba(245,234,216,.78);"><span style="color:#c9984a;">✓</span> &nbsp;Lounge breakfast with the kids is low-key vs. the main buffet rush.</li>
+          </ul>
+          <p class="font-body text-xs leading-relaxed" style="color:rgba(245,234,216,.45);font-style:italic;">
+            Caveat: Several guests note the "upgraded spirits" claim is inconsistent — the main bar also pours well. The primary payoff for this trip is the restaurant priority and the quieter room location.
+          </p>
+        </div>
+
+        <!-- A guest quote on Premium Level -->
+        <div class="p-5" style="background:#122233;border-left:4px solid rgba(46,134,171,.5);border-radius:2px;">
+          <p class="font-display text-sm leading-relaxed mb-3" style="color:rgba(245,234,216,.78);font-style:italic;font-size:1.05rem;">
+            "The Premium Level Office was instrumental in getting us the room we requested... can't wait for our next stay at Premium Level."
+          </p>
+          <p class="font-body text-xs" style="color:rgba(245,234,216,.4);">— C&amp;S, TripAdvisor, May 2025 · ★★★★★</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════ RESORT & AMENITIES -->
+<section id="amenities" class="py-24 px-6" style="background:#f0f7f4;">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-12 reveal">
+      <span class="eyebrow">The Resort</span>
+      <span class="rule"></span>
+      <h2 class="font-display text-ink mt-3" style="font-size:clamp(2rem,5vw,3rem);font-weight:400;font-style:italic;">Resort &amp; Amenities</h2>
+    </div>
+
+    <!-- Compound pass banner -->
+    <div class="cpd-banner px-8 py-10 mb-12 reveal" style="border-radius:2px;">
+      <div class="cpd-banner-img" aria-hidden="true"></div>
+      <div class="cpd-content flex flex-col sm:flex-row items-start sm:items-center gap-6">
+        <div class="ic-gold ic-lg flex-shrink-0">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9984a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div>
+          <span class="eyebrow mb-1" style="color:#c9984a;">The Access Advantage</span>
+          <h3 class="font-display mb-2" style="font-size:1.6rem;font-weight:500;color:#f5ead8;">Compound Pass — Full Complex Access</h3>
+          <p class="font-body text-sm leading-relaxed" style="color:rgba(245,234,216,.75);">
+            Palace guests hold full access rights to every pool, theater, water park, and dining option across all four sister properties within the grand resort compound:
+            <span style="color:#e8b96a;font-weight:500;"> Colonial · Tropical · Beach · Caribe</span>.<br>
+            <span style="color:rgba(245,234,216,.5);font-size:.82em;margin-top:.4rem;display:block;">That's 11 pools total across the complex — you will never run out of space.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 amenity cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div class="am-card reveal d1">
+        <div class="relative overflow-hidden" style="height:210px;">
+          <img src="https://www.mayapalaceresort.com/images/slides/slide-4.jpg"
+               alt="Barceló Maya Palace beach — aerial view of white sand and turquoise reef-protected Caribbean water"
+               class="w-full h-full object-cover" loading="lazy" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(13,27,42,.55),transparent 55%);"></div>
+          <p class="absolute bottom-3 left-4 font-body text-xs font-semibold" style="color:rgba(245,234,216,.7);letter-spacing:.1em;text-transform:uppercase;z-index:2;">The actual beach</p>
+        </div>
+        <div class="p-6">
+          <span class="eyebrow mb-1" style="color:#2e86ab;">The Beach</span>
+          <h4 class="font-display text-ink mt-1 mb-2" style="font-size:1.2rem;font-weight:500;">Reef-Protected Calm Water</h4>
+          <p class="font-body text-sm leading-relaxed mb-3" style="color:#6b4f3a;">
+            A natural coral reef breaks incoming waves — the water is genuinely flat, shallow, and calm. You can see the darker reef stripe offshore in the photo above. Guests consistently report snorkeling sea turtles and tropical fish right from the beach.
+          </p>
+          <p class="font-body text-xs italic" style="color:#c97b4b;">"Clear calm water — snorkeling gear, turtles and fish literally right in front of you." — JoJo_Jimbrero, TripAdvisor 2026</p>
+        </div>
+      </div>
+
+      <div class="am-card reveal d2">
+        <div class="relative overflow-hidden" style="height:210px;">
+          <img src="https://www.mayapalaceresort.com/images/slides/slide-2.jpg"
+               alt="Barceló Maya Palace Barcy water park — colorful splash park with slides and shallow pool, ocean behind"
+               class="w-full h-full object-cover" loading="lazy" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(13,27,42,.55),transparent 55%);"></div>
+          <p class="absolute bottom-3 left-4 font-body text-xs font-semibold" style="color:rgba(245,234,216,.7);letter-spacing:.1em;text-transform:uppercase;z-index:2;">Barcy Water Park</p>
+        </div>
+        <div class="p-6">
+          <span class="eyebrow mb-1" style="color:#2e86ab;">On-Site Water Features</span>
+          <h4 class="font-display text-ink mt-1 mb-2" style="font-size:1.2rem;font-weight:500;">Splash Park &amp; Kids Pools</h4>
+          <p class="font-body text-sm leading-relaxed" style="color:#6b4f3a;">
+            The Palace has a dedicated zero-entry kids pool and the Barcy Water Park with themed slides, storybook structures, and splash zones. Guests note it's the largest kids area of the four properties. Shallow enough throughout for a 1-year-old with supervision.
+          </p>
+        </div>
+      </div>
+
+      <div class="am-card reveal d3">
+        <div class="relative overflow-hidden" style="height:210px;">
+          <img src="https://www.mayapalaceresort.com/images/slides/slide-3.jpg"
+               alt="Barceló Maya Palace illuminated dragon pool sculpture at dusk"
+               class="w-full h-full object-cover" loading="lazy" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(13,27,42,.55),transparent 55%);"></div>
+          <p class="absolute bottom-3 left-4 font-body text-xs font-semibold" style="color:rgba(245,234,216,.7);letter-spacing:.1em;text-transform:uppercase;z-index:2;">Barcy Club · Ages 4+</p>
+        </div>
+        <div class="p-6">
+          <span class="eyebrow mb-1" style="color:#c9984a;">Childcare</span>
+          <h4 class="font-display text-ink mt-1 mb-2" style="font-size:1.2rem;font-weight:500;">Barcy Club Drop-Off</h4>
+          <p class="font-body text-sm leading-relaxed" style="color:#6b4f3a;">
+            On-property supervised drop-off childcare for the 5-year-old. <strong style="color:#c97b4b;">Strict minimum age: 4 years.</strong> The 1-year-old is ineligible. When the 5-year-old is at Barcy Club, adults get genuine time at the adult pools.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════ DINING -->
+<section id="dining" class="py-24 px-6" style="background:#0d1b2a;">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-16 reveal">
+      <span class="eyebrow">Food &amp; Drink</span>
+      <span class="rule"></span>
+      <h2 class="font-display mt-3" style="font-size:clamp(2rem,5vw,3rem);font-weight:400;font-style:italic;color:#f5ead8;">Dining</h2>
+      <p class="font-body mt-2 text-sm" style="color:rgba(245,234,216,.42);font-style:italic;">All-inclusive across the full complex</p>
+    </div>
+
+    <!-- Hero dining photo - beachfront restaurant -->
+    <div class="reveal mb-8" style="position:relative;border-radius:2px;overflow:hidden;">
+      <img src="https://www.mayapalaceresort.com/images/slides/slide-23.jpg"
+           alt="Barceló Maya Palace open-air beachfront restaurant with pergola and ocean views"
+           class="w-full object-cover" style="max-height:420px;" loading="lazy" />
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(13,27,42,.8) 0%,transparent 55%);"></div>
+      <div class="absolute bottom-6 left-8" style="z-index:2;">
+        <p class="eyebrow mb-1" style="color:#c9984a;">Specialty Dining</p>
+        <h3 class="font-display" style="font-size:1.6rem;font-weight:400;font-style:italic;color:#f5ead8;">Open-Air Beachfront Restaurant</h3>
+        <p class="font-body text-sm mt-1" style="color:rgba(245,234,216,.65);">Wood-pergola terrace overlooking the Caribbean · Orange place settings · Table-clothed dining with an ocean breeze</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+
+      <!-- Buffet photo + description -->
+      <div class="reveal d1" style="border-radius:2px;overflow:hidden;background:#122233;">
+        <div style="position:relative;height:220px;overflow:hidden;">
+          <img src="https://www.mayapalaceresort.com/images/slides/slide-27.jpg"
+               alt="Barceló Maya Palace circular buffet restaurant with ocean reef mosaic mural walls"
+               class="w-full h-full object-cover" loading="lazy" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(18,34,51,.8),transparent 50%);"></div>
+        </div>
+        <div class="p-6">
+          <span class="eyebrow mb-1" style="color:#2e86ab;">Main Buffet</span>
+          <h4 class="font-display mb-2" style="font-size:1.25rem;font-weight:500;color:#f5ead8;">The Circular Coral Restaurant</h4>
+          <p class="font-body text-sm leading-relaxed" style="color:rgba(245,234,216,.65);">
+            A dramatic circular hall with a floor-to-ceiling Caribbean reef mosaic mural. Extensive stations — guests consistently praise variety and freshness. Open for breakfast, lunch, and dinner. Omelette station at breakfast is a standout.
+          </p>
+          <p class="font-body text-xs italic mt-3" style="color:rgba(201,152,74,.8);">"Omelettes delicious, made with special care." — Patricia S., TripAdvisor 2026</p>
+        </div>
+      </div>
+
+      <!-- Specialty dining guide -->
+      <div class="reveal d2 p-7" style="background:#122233;border-radius:2px;">
+        <span class="eyebrow mb-4" style="color:#c9984a;">Specialty À La Carte Restaurants</span>
+        <p class="font-body text-sm mb-5 leading-relaxed" style="color:rgba(245,234,216,.6);">Included in the all-inclusive package. Premium Level guests book two at check-in — standard guests book one. Reserve early; popular slots fill within the first day.</p>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span style="color:#c9984a;font-size:.9rem;margin-top:1px;">▸</span>
+            <div>
+              <p class="font-body font-semibold text-sm" style="color:rgba(245,234,216,.9);">Tokyo Japanese Restaurant</p>
+              <p class="font-body text-xs" style="color:rgba(245,234,216,.55);">Live teppanyaki tables — theatrical, interactive. The 5-year-old will love watching the chef.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span style="color:#c9984a;font-size:.9rem;margin-top:1px;">▸</span>
+            <div>
+              <p class="font-body font-semibold text-sm" style="color:rgba(245,234,216,.9);">Rodizzio Brazilian Steakhouse</p>
+              <p class="font-body text-xs" style="color:rgba(245,234,216,.55);">Praised by multiple TripAdvisor reviewers. Meat carved tableside. Ask for Paola, Abel, or Arnold.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span style="color:#c9984a;font-size:.9rem;margin-top:1px;">▸</span>
+            <div>
+              <p class="font-body font-semibold text-sm" style="color:rgba(245,234,216,.9);">Mediterranean &amp; Mexican Specialties</p>
+              <p class="font-body text-xs" style="color:rgba(245,234,216,.55);">Multiple options across the compound's four properties — the compound pass makes all accessible.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span style="color:#c9984a;font-size:.9rem;margin-top:1px;">▸</span>
+            <div>
+              <p class="font-body font-semibold text-sm" style="color:rgba(245,234,216,.9);">Swim-Up Bar &amp; Pool Bars</p>
+              <p class="font-body text-xs" style="color:rgba(245,234,216,.55);">Multiple thatched-roof palapa bars throughout the pool areas. Top-shelf upgrade included with Premium.</p>
+            </div>
+          </li>
+        </ul>
+        <div class="mt-5 p-3" style="background:rgba(201,152,74,.1);border-left:3px solid rgba(201,152,74,.5);border-radius:1px;">
+          <p class="font-body text-xs" style="color:rgba(245,234,216,.6);">⚑ &nbsp;<strong style="color:rgba(245,234,216,.8);">Pro tip:</strong> Book specialty restaurants the moment you hit the Premium Lounge at check-in. Times before 8pm fill first. October crowds are lighter than peak winter/spring, improving availability.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════ MAYA MALL ENTERTAINMENT -->
+<section id="entertainment" class="py-24 px-6" style="background:#f5ead8;">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-14 reveal">
+      <span class="eyebrow">On-Site Entertainment</span>
+      <span class="rule"></span>
+      <h2 class="font-display text-ink mt-3" style="font-size:clamp(2rem,5vw,3rem);font-weight:400;font-style:italic;">Maya Mall Hub</h2>
+      <p class="font-body mt-2 text-sm italic" style="color:#6b4f3a;">Shared on-site complex across all Barceló properties</p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-5">
+
+      <!-- Strikers with disclaimer -->
+      <div class="ent-card p-8 reveal d1" style="background:#fff;border-left:4px solid #c9984a;box-shadow:0 4px 24px rgba(13,27,42,.07);">
+        <div class="flex flex-col sm:flex-row items-start gap-6">
+          <div class="ic-gold ic-lg flex-shrink-0">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9984a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="9" r="1.2" fill="#c9984a" stroke="none"/><circle cx="12" cy="7" r="1.2" fill="#c9984a" stroke="none"/><circle cx="15" cy="9" r="1.2" fill="#c9984a" stroke="none"/></svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <span class="eyebrow mb-1" style="color:#1b4f72;">Sports Bar &amp; Arcade</span>
+            <h4 class="font-display text-ink mb-2" style="font-size:1.5rem;font-weight:500;">Strikers Sports Bar &amp; Bowling</h4>
+            <p class="font-body text-sm leading-relaxed mb-5" style="color:#6b4f3a;">24-hour inclusive casual buffet and full arcade complex — all covered under the all-inclusive package. Open any hour, great for a late snack with tired kids.</p>
+            <div class="bowling-note p-4" role="note" aria-label="Bowling age and pricing restriction">
+              <div class="flex items-start gap-3">
+                <div class="tip-wrap flex-shrink-0 mt-px">
+                  <button type="button" aria-describedby="bowl-tip" class="w-5 h-5 rounded-full font-bold text-xs flex items-center justify-center cursor-help" style="background:#c9984a;color:#0d1b2a;line-height:1;" >!</button>
+                  <div class="tip-box" id="bowl-tip" role="tooltip">6-lane bowling: additional ~$15/game. Minimum age 6 years. Neither the 5-year-old nor the 1-year-old can participate.</div>
+                </div>
+                <div>
+                  <p class="font-body font-semibold text-sm mb-1" style="color:#8b5e2c;">Bowling Restriction</p>
+                  <p class="font-body text-sm leading-relaxed" style="color:#6b4030;">The bowling alley carries an <strong>additional ~$15/game charge</strong> and requires a <strong>minimum age of 6 years</strong>. The 5-year-old and 1-year-old cannot participate — but the arcade is open to all.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+
+        <div class="ent-card reveal d2" style="background:#fff;border-left:4px solid #1b4f72;box-shadow:0 4px 24px rgba(13,27,42,.07);">
+          <div class="p-6">
+            <div class="ic-sea mb-3"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#2e86ab" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg></div>
+            <span class="eyebrow mb-1" style="color:#1b4f72;">Fine Dining</span>
+            <h4 class="font-display text-ink mt-1 mb-2" style="font-size:1.15rem;font-weight:500;">Tokyo Japanese</h4>
+            <p class="font-body text-sm leading-relaxed" style="color:#6b4f3a;">Live teppanyaki tables — chef cooks at the table. Theatrical and kid-friendly.</p>
+          </div>
+        </div>
+
+        <div class="ent-card reveal d3" style="overflow:hidden;background:#fff;border-left:4px solid #1b4f72;box-shadow:0 4px 24px rgba(13,27,42,.07);">
+          <div class="relative" style="height:120px;">
+            <img src="https://www.mayapalaceresort.com/images/gallery/gallery-4.jpg"
+                 alt="Barceló Maya Palace swim-up bar with thatched palapa roof and tropical cocktails"
+                 class="w-full h-full object-cover" loading="lazy" />
+            <div style="position:absolute;inset:0;background:rgba(13,27,42,.35);"></div>
+          </div>
+          <div class="p-5">
+            <span class="eyebrow mb-1" style="color:#1b4f72;">Lounge</span>
+            <h4 class="font-display text-ink mt-1 mb-1" style="font-size:1.15rem;font-weight:500;">The Mall Bar</h4>
+            <p class="font-body text-sm" style="color:#6b4f3a;">Central gathering spot. Top-shelf cocktails in a relaxed social atmosphere.</p>
+          </div>
+        </div>
+
+        <div class="ent-card p-6 reveal d4" style="background:#fff;border-left:4px solid rgba(201,152,74,.5);box-shadow:0 4px 24px rgba(13,27,42,.07);">
+          <div class="ic-gold mb-3"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#c9984a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+          <span class="eyebrow mb-1" style="color:#c9984a;">Shopping</span>
+          <h4 class="font-display text-ink mt-1 mb-2" style="font-size:1.15rem;font-weight:500;">Boutiques &amp; Artisan Shops</h4>
+          <p class="font-body text-sm leading-relaxed" style="color:#6b4f3a;"><strong>B-Fashion</strong> boutique plus traditional Mexican artisan souvenir shops. Good for handcrafted gifts.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════ WHAT GUESTS SAY -->
+<section id="reviews" class="py-24 px-6" style="background:#0d1b2a;">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-16 reveal">
+      <span class="eyebrow">Real Guests, Real Words</span>
+      <span class="rule"></span>
+      <h2 class="font-display mt-3" style="font-size:clamp(2rem,5vw,3rem);font-weight:400;font-style:italic;color:#f5ead8;">What Guests Say</h2>
+      <p class="font-body mt-2 text-sm" style="color:rgba(245,234,216,.38);font-style:italic;">Sourced from TripAdvisor reviews — including families with young children</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+      <div class="p-7 reveal d1" style="background:#122233;border-top:3px solid #c9984a;border-radius:2px;">
+        <div class="stars mb-3">★★★★★</div>
+        <p class="font-display leading-relaxed mb-4" style="font-size:1.12rem;font-style:italic;color:rgba(245,234,216,.85);">
+          "White powdery sand, clear calm water — snorkeling gear, turtles and fish literally right in front of you. Cleanest grounds I've ever seen at a resort."
+        </p>
+        <div class="flex items-center gap-2">
+          <div style="width:32px;height:32px;background:rgba(201,152,74,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c9984a" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <p class="font-body text-xs font-semibold" style="color:rgba(245,234,216,.7);">JoJo_Jimbrero</p>
+            <p class="font-body text-xs" style="color:rgba(245,234,216,.35);">Edmonton · TripAdvisor · Feb 2026</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-7 reveal d2" style="background:#122233;border-top:3px solid #c9984a;border-radius:2px;">
+        <div class="stars mb-3">★★★★★</div>
+        <p class="font-display leading-relaxed mb-4" style="font-size:1.12rem;font-style:italic;color:rgba(245,234,216,.85);">
+          "Went with small children — nothing to complain about. Saw 2 different sea turtles while snorkeling. Beautiful grounds, even spotted monkeys and deer."
+        </p>
+        <div class="flex items-center gap-2">
+          <div style="width:32px;height:32px;background:rgba(201,152,74,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c9984a" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <p class="font-body text-xs font-semibold" style="color:rgba(245,234,216,.7);">Chris</p>
+            <p class="font-body text-xs" style="color:rgba(245,234,216,.35);">Edmonton · TripAdvisor · Feb 2026 · With young children</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-7 reveal d3" style="background:#122233;border-top:3px solid #2e86ab;border-radius:2px;">
+        <div class="stars mb-3">★★★★★</div>
+        <p class="font-display leading-relaxed mb-4" style="font-size:1.12rem;font-style:italic;color:rgba(245,234,216,.85);">
+          "Beautifully kept property, incredibly clean. Beach kept up and clean. Buffet organized, variety, tasty. Evening shows have improved in quality."
+        </p>
+        <div class="flex items-center gap-2">
+          <div style="width:32px;height:32px;background:rgba(46,134,171,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2e86ab" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <p class="font-body text-xs font-semibold" style="color:rgba(245,234,216,.7);">BrendaLOVEStoTRAVEL</p>
+            <p class="font-body text-xs" style="color:rgba(245,234,216,.35);">Toronto · TripAdvisor · Apr 2026 · Return visitor</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-7 reveal d4" style="background:#122233;border-top:3px solid #2e86ab;border-radius:2px;">
+        <div class="stars mb-3">★★★★★</div>
+        <p class="font-display leading-relaxed mb-4" style="font-size:1.12rem;font-style:italic;color:rgba(245,234,216,.85);">
+          "Absolutely beautiful, with lots of pools. Rooms spacious and very clean. Beach warm, clean, and full of marine life. Staff consistently warm and attentive."
+        </p>
+        <div class="flex items-center gap-2">
+          <div style="width:32px;height:32px;background:rgba(46,134,171,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2e86ab" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <p class="font-body text-xs font-semibold" style="color:rgba(245,234,216,.7);">Mike S</p>
+            <p class="font-body text-xs" style="color:rgba(245,234,216,.35);">TripAdvisor · Mar 2026</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Honest caveats note -->
+    <div class="mt-8 p-6 reveal" style="background:#122233;border-left:4px solid rgba(201,152,74,.35);border-radius:2px;">
+      <p class="eyebrow mb-2" style="color:rgba(201,152,74,.7);">A Few Things to Know Going In</p>
+      <ul class="font-body text-sm space-y-2" style="color:rgba(245,234,216,.6);">
+        <li><span style="color:#c9984a;">·</span> &nbsp;À la carte restaurant booking can be competitive. Priority from Premium Level helps, but flexibility on dinner times (8–9:30pm slots are easier to get than 6pm) makes a real difference.</li>
+        <li><span style="color:#c9984a;">·</span> &nbsp;Spring break (March) draws louder crowds and loud pool music. October is quieter — resort atmosphere will be calmer and more family-appropriate.</li>
+        <li><span style="color:#c9984a;">·</span> &nbsp;A small number of guests note an inconsistency in service quality. The overall consensus from recent reviews leans strongly positive, but individual staff experiences can vary.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════ OCTOBER CONDITIONS -->
+<section id="october" class="py-20 px-6" style="background:#f0f7f4;">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-12 reveal">
+      <span class="eyebrow">Know Before You Go</span>
+      <span class="rule"></span>
+      <h2 class="font-display text-ink mt-3" style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;font-style:italic;">October in Riviera Maya</h2>
+    </div>
+
+    <!-- Weather stat cards -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
+
+      <div class="weather-card reveal d1">
+        <p class="eyebrow mb-2" style="color:#1b4f72;">High Temp</p>
+        <p class="weather-num">85°<span style="font-size:1.2rem;">F</span></p>
+        <p class="font-body text-xs mt-1" style="color:#6b4f3a;">29.5°C average</p>
+      </div>
+
+      <div class="weather-card reveal d2">
+        <p class="eyebrow mb-2" style="color:#1b4f72;">Sunshine</p>
+        <p class="weather-num">8.4<span style="font-size:1.2rem;">h</span></p>
+        <p class="font-body text-xs mt-1" style="color:#6b4f3a;">per day average</p>
+      </div>
+
+      <div class="weather-card reveal d3">
+        <p class="eyebrow mb-2" style="color:#1b4f72;">Sea Temp</p>
+        <p class="weather-num">82°<span style="font-size:1.2rem;">F</span></p>
+        <p class="font-body text-xs mt-1" style="color:#6b4f3a;">28°C · bath-warm</p>
+      </div>
+
+      <div class="weather-card reveal d4">
+        <p class="eyebrow mb-2" style="color:#1b4f72;">Crowds</p>
+        <p class="weather-num" style="font-size:1.8rem;line-height:1.2;">Low</p>
+        <p class="font-body text-xs mt-1" style="color:#6b4f3a;">Off-peak shoulder season</p>
+      </div>
+
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <div class="p-6 reveal d1" style="background:#fff;border-left:4px solid #2e86ab;border-radius:2px;box-shadow:0 2px 16px rgba(13,27,42,.07);">
+        <span class="eyebrow mb-2" style="color:#2e86ab;">What to Expect</span>
+        <h4 class="font-display text-ink mb-3" style="font-size:1.2rem;font-weight:500;">Warm, Sunny, with Afternoon Showers</h4>
+        <p class="font-body text-sm leading-relaxed" style="color:#6b4f3a;">
+          October is still technically rainy season, but Riviera Maya's pattern is predictable: strong sunshine most of the day, followed by a brief afternoon or evening shower that rarely lasts more than a few hours. Humidity runs around 78%. Water temperature is at its peak — bath-warm and beautiful. Ocean conditions at the Palace's reef-protected beach remain calm and gentle throughout.
+        </p>
+      </div>
+
+      <div class="p-6 reveal d2" style="background:#fff;border-left:4px solid #c9984a;border-radius:2px;box-shadow:0 2px 16px rgba(13,27,42,.07);">
+        <span class="eyebrow mb-2" style="color:#c9984a;">Hurricane Season Note</span>
+        <h4 class="font-display text-ink mb-3" style="font-size:1.2rem;font-weight:500;">Low Risk, Good Timing</h4>
+        <p class="font-body text-sm leading-relaxed" style="color:#6b4f3a;">
+          October is technically within hurricane season (June–October), but actual landfall risk for any specific week is very small. Peak hurricane activity is August–September; by mid-October statistical risk drops further. Travel insurance is always worth carrying. October's big upside: significantly lower hotel prices and lighter crowds than winter peak season (December–March).
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+</main>
+
+
+<!-- ════════════════════════════════════════════════ FOOTER -->
+<footer style="background:#060f1a;border-top:1px solid rgba(201,152,74,.18);">
+  <div class="max-w-3xl mx-auto text-center py-16 px-6">
+    <div style="width:32px;height:1px;background:#c9984a;margin:0 auto 2rem;"></div>
+    <h2 class="font-display mb-1" style="font-size:2rem;font-weight:400;font-style:italic;color:#f5ead8;">Barceló Maya Palace</h2>
+    <p class="font-body text-xs mb-8" style="color:rgba(245,234,216,.35);letter-spacing:.12em;text-transform:uppercase;">Xpu Há &nbsp;·&nbsp; Riviera Maya &nbsp;·&nbsp; Mexico &nbsp;·&nbsp; Oct 10 – 17, 2026</p>
+
+    <nav aria-label="Official resort references" class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+      <a href="https://www.barcelo.com/en-us/barcelo-maya-palace/" target="_blank" rel="noopener noreferrer"
+         class="font-body text-sm transition-colors duration-200" style="color:rgba(232,185,106,.8);text-decoration:underline;text-underline-offset:3px;">
+        Resort Official Site ↗
+      </a>
+      <span style="color:rgba(245,234,216,.18);" class="hidden sm:inline" aria-hidden="true">·</span>
+      <a href="https://www.barcelo.com/en-us/barcelo-maya-grand-resort/" target="_blank" rel="noopener noreferrer"
+         class="font-body text-sm transition-colors duration-200" style="color:rgba(232,185,106,.8);text-decoration:underline;text-underline-offset:3px;">
+        Grand Resort &amp; Entertainment ↗
+      </a>
+      <span style="color:rgba(245,234,216,.18);" class="hidden sm:inline" aria-hidden="true">·</span>
+      <a href="https://www.tripadvisor.com/Hotel_Review-g27717290-d673129-Reviews-Barcelo_Maya_Palace-Barcelo_Maya_Solidaridad_Yucatan_Peninsula.html" target="_blank" rel="noopener noreferrer"
+         class="font-body text-sm transition-colors duration-200" style="color:rgba(232,185,106,.8);text-decoration:underline;text-underline-offset:3px;">
+        TripAdvisor Reviews ↗
+      </a>
+    </nav>
+
+    <p class="font-display" style="font-size:.95rem;font-style:italic;color:rgba(245,234,216,.22);">
+      <span id="footer-family-label" style="display:none;">Prepared for the <span class="family-name-tag"></span> &nbsp;·&nbsp; </span>Reviews sourced from TripAdvisor &nbsp;·&nbsp; Data validated May 2026
+    </p>
+  </div>
+</footer>
+
+
+<script>
+(function () {
+  'use strict';
+
+  // ── URL param personalization ────────────────────────────────
+  // Support ?name= (hosted) and #name= (local file://)
+  var params = new URLSearchParams(window.location.search);
+  var rawName = params.get('name');
+  if (!rawName && window.location.hash) {
+    var hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+    rawName = hashParams.get('name');
+  }
+
+  if (rawName) {
+    // Capitalize each word: "mullen" → "Mullen", "del campo" → "Del Campo"
+    var family = rawName.trim().split(/\s+/).map(function (w) {
+      return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+    }).join(' ') + ' Family';
+
+    // Page title
+    document.title = family + ' — Riviera Maya 2026';
+
+    // Hero eyebrow — prepend family name
+    var eyebrow = document.getElementById('hero-eyebrow');
+    if (eyebrow) {
+      eyebrow.innerHTML = '<span style="color:rgba(245,234,216,.9);font-weight:700;">' + family + '</span>'
+        + ' &nbsp;·&nbsp; October 10 – 17, 2026 &nbsp;·&nbsp; Barceló Maya Palace';
+    }
+
+    // Fill all .family-name-tag spans
+    document.querySelectorAll('.family-name-tag').forEach(function (el) {
+      el.textContent = family;
+    });
+
+    // Show cost card
+    var costCard = document.getElementById('cost-card');
+    if (costCard) { costCard.style.display = ''; }
+
+    // Show footer family label
+    var footerLabel = document.getElementById('footer-family-label');
+    if (footerLabel) { footerLabel.style.display = 'inline'; }
+  }
+
+  // ── Scroll reveal ────────────────────────────────────────────
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+
+</body>
+</html>
