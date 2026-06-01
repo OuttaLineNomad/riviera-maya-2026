@@ -282,25 +282,25 @@
                 <p class="font-body" style="font-size:.9rem;color:rgba(245,234,216,.85);">All-Inclusive Stay</p>
                 <p class="font-body" style="font-size:.72rem;color:rgba(245,234,216,.38);">7 nights · Barceló Maya Palace · Premium Level</p>
               </div>
-              <p class="font-display" style="font-size:1.5rem;font-weight:500;color:#f5ead8;white-space:nowrap;margin-left:1.5rem;">~$3,300</p>
+              <p id="cost-hotel" class="font-display" style="font-size:1.5rem;font-weight:500;color:#f5ead8;white-space:nowrap;margin-left:1.5rem;">~$3,300</p>
             </div>
             <div style="display:flex;justify-content:space-between;align-items:baseline;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.1);">
               <div>
                 <p class="font-body" style="font-size:.9rem;color:rgba(245,234,216,.85);">Flights</p>
-                <p class="font-body" style="font-size:.72rem;color:rgba(245,234,216,.38);">TIJ → CUN · Roundtrip via CBX · Nonstop</p>
+                <p id="cost-flights-sub" class="font-body" style="font-size:.72rem;color:rgba(245,234,216,.38);">TIJ → CUN · Roundtrip via CBX · Nonstop</p>
               </div>
-              <p class="font-display" style="font-size:1.5rem;font-weight:500;color:#f5ead8;white-space:nowrap;margin-left:1.5rem;">~$1,500</p>
+              <p id="cost-flights" class="font-display" style="font-size:1.5rem;font-weight:500;color:#f5ead8;white-space:nowrap;margin-left:1.5rem;">~$1,500</p>
             </div>
             <div style="display:flex;justify-content:space-between;align-items:baseline;padding:1rem 0;">
               <p class="font-body" style="font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,234,216,.5);">Estimated Total *</p>
-              <p class="font-display" style="font-size:clamp(2.2rem,7vw,3.5rem);font-weight:400;line-height:1;color:#e8b96a;letter-spacing:-.02em;white-space:nowrap;margin-left:1.5rem;">~$4,800</p>
+              <p id="cost-total" class="font-display" style="font-size:clamp(2.2rem,7vw,3.5rem);font-weight:400;line-height:1;color:#e8b96a;letter-spacing:-.02em;white-space:nowrap;margin-left:1.5rem;">~$4,800</p>
             </div>
           </div>
 
           <p class="font-body" style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,234,216,.25);">
             USD &nbsp;·&nbsp; October 10 – 17, 2026
           </p>
-          <p class="font-body" style="font-size:.72rem;color:rgba(245,234,216,.28);margin-top:.75rem;line-height:1.6;">
+          <p id="cost-footnote" class="font-body" style="font-size:.72rem;color:rgba(245,234,216,.28);margin-top:.75rem;line-height:1.6;">
             * Estimate based on 2 adults, 1 child &amp; 1 infant. Prices may vary with other family sizes.
           </p>
         </div>
@@ -1004,6 +1004,28 @@
     // Show footer family label
     var footerLabel = document.getElementById('footer-family-label');
     if (footerLabel) { footerLabel.style.display = 'inline'; }
+
+    // ── Family-specific cost overrides ──────────────────────────
+    var familyOverrides = {
+      'sanchez': {
+        hotel:      '$3,014.20',
+        flights:    '~$1,500',
+        flightsSub: 'TIJ → CUN · Roundtrip via CBX · Nonstop · for two traveling',
+        total:      '~$4,514',
+        footnote:   '* Cost estimate for two travelers.'
+      }
+    };
+
+    var key = rawName.trim().toLowerCase();
+    var overrides = familyOverrides[key];
+    if (overrides) {
+      var el;
+      el = document.getElementById('cost-hotel');    if (el) el.textContent = overrides.hotel;
+      el = document.getElementById('cost-flights');  if (el) el.textContent = overrides.flights;
+      el = document.getElementById('cost-flights-sub'); if (el) el.textContent = overrides.flightsSub;
+      el = document.getElementById('cost-total');    if (el) el.textContent = overrides.total;
+      el = document.getElementById('cost-footnote'); if (el) el.textContent = overrides.footnote;
+    }
   }
 
   // ── Scroll reveal ────────────────────────────────────────────
